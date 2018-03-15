@@ -1,17 +1,17 @@
 //
 // Created by ap16032 on 02/03/2018.
 //
-
+#include <iostream>
 #include "Vector.h"
 #include <cmath>
 
-myproject::Vector::Vector() : x(0), y(0), z(0) {;} //constructor
+physics::Vector::Vector() : x(0), y(0), z(0) {;} //constructor
 // constructor initialises all coordinates to 0 by default
 
 /* Setting x,y,z coordinates */
-void myproject::Vector::setX(double a) { x=a;}
-void myproject::Vector::setY(double a) { y=a;}
-void myproject::Vector::setZ(double a) { z=a;}
+void physics::Vector::setX(double a) { x=a;}
+void physics::Vector::setY(double a) { y=a;}
+void physics::Vector::setZ(double a) { z=a;}
 
 /* Getting x,y,z coordinates */
 double myproject::Vector::getX() const { return x;}
