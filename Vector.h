@@ -7,7 +7,7 @@
 
 #include <cmath>
 
-namespace myproject{
+namespace physics{
     class Vector {
     public:
         Vector(); //constructor
@@ -26,6 +26,37 @@ namespace myproject{
         void scale(double); // Scale (x,y,z) by a factor
         Vector unit(); // gives the unit vector
         Vector cross(const Vector &v) const; //gives cross product
+        /*** Overloading Operators ***/
+        // Addition, Subtraction and Inversion of vectors //
+        Vector operator+(const Vector &v1)  //overloading operator +
+        {
+            Vector v0(*this);  //creating a copy vector v0
+            //updating copy vector and adding components
+            v0.x += v1.x;
+            v0.y += v1.y;
+            v0.z += v1.z;
+            return v0;
+        }
+
+        Vector operator-(const Vector &v1)  //overloading operator - with object argument
+        {
+            Vector v0(*this);  //creating a copy vector v0
+            //updating copy vector and subtracting components
+            v0.x = v0.x - v1.x;
+            v0.y = v0.y - v1.y;
+            v0.z = v0.z - v1.z;
+            return v0;
+        }
+
+        Vector operator-()  //overloading operator - (for inversion of vector)
+        {
+            Vector v0(*this);  //creating a copy vector v0
+            //updating copy vector and inverting components
+            v0.x = -v0.x;
+            v0.y = -v0.y;
+            v0.z = -v0.z;
+            return v0;
+        }
 
     private:
         double x,y,z;
